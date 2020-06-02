@@ -49,6 +49,12 @@ loop = function () {
   if (controller.right) {
     rectangle.x_velocity += 0.5;
   }
+
+  rectangle.y_velocity += 1.5; // gravity
+  rectangle.x += rectangle.x_velocity;
+  rectangle.y += rectangle.y_velocity;
+  rectangle.x_velocity *= 0.9; // friction
+  rectangle.y_velocity *= 0.9; // friction
 };
 
 window.addEventListener("keydown", controller.keyListener);
