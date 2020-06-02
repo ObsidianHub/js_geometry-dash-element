@@ -55,6 +55,13 @@ loop = function () {
   rectangle.y += rectangle.y_velocity;
   rectangle.x_velocity *= 0.9; // friction
   rectangle.y_velocity *= 0.9; // friction
+
+  // if rectangle is falling below floor line
+  if (rectangle.y > 180 - 16 - 32) {
+    rectangle.jumping = false;
+    rectangle.y = 180 - 16 - 32;
+    rectangle.y_velocity = 0;
+  }
 };
 
 window.addEventListener("keydown", controller.keyListener);
