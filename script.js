@@ -41,6 +41,14 @@ loop = function () {
     rectangle.y_velocity -= 20;
     rectangle.jumping = true;
   }
+
+  if (controller.left) {
+    rectangle.x_velocity -= 0.5;
+  }
+
+  if (controller.right) {
+    rectangle.x_velocity += 0.5;
+  }
 };
 
 window.addEventListener("keydown", controller.keyListener);
