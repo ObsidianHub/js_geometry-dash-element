@@ -71,6 +71,13 @@ loop = function () {
 
     rectangle.x = -32;
   }
+
+  context.fillStyle = "#202020";
+  context.fillRect(0, 0, 320, 180); // x, y, width, height
+  context.fillStyle = "#ff0000"; // hex for red
+  context.beginPath();
+  context.rect(rectangle.x, rectangle.y, rectangle.width, rectangle.height);
+  context.fill();
 };
 
 window.addEventListener("keydown", controller.keyListener);
