@@ -36,6 +36,13 @@ controller = {
   },
 };
 
+loop = function () {
+  if (controller.up && rectangle.jumping == false) {
+    rectangle.y_velocity -= 20;
+    rectangle.jumping = true;
+  }
+};
+
 window.addEventListener("keydown", controller.keyListener);
 window.addEventListener("keyup", controller.keyListener);
 window.requestAnimationFrame(loop);
