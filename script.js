@@ -78,6 +78,15 @@ loop = function () {
   context.beginPath();
   context.rect(rectangle.x, rectangle.y, rectangle.width, rectangle.height);
   context.fill();
+  context.strokeStyle = "#202830";
+  context.lineWidth = 4;
+  context.beginPath();
+  context.moveTo(0, 164);
+  context.lineTo(320, 164);
+  context.stroke();
+
+  // call update when the browser is ready to draw again
+  window.requestAnimationFrame(loop);
 };
 
 window.addEventListener("keydown", controller.keyListener);
